@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <link rel="stylesheet" href="employee.component.css">
+</head>
+<body>
+  <h2>Welcome to Employee Page</h2>
+  <div class="form">
+      <form (ngSubmit)="addEmployee()">
+          <div class="inputContainer">
+              Name: <input type="text" [(ngModel)]="employee.name" name="name" placeholder="Enter your name" required>
+              Position: <input type="text" [(ngModel)]="employee.position" name="position" placeholder="Enter your position" required>
+              Department: <input type="text" [(ngModel)]="employee.department" name="department" placeholder="Enter your department" required>
+              <button type="submit">Add Employee</button>
+          </div>
+      </form>
+  </div>
+  
+  <table>
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Department</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let emp of employeesList; let i = index">
+              <td>{{ emp.name }}</td>
+              <td>{{ emp.position }}</td>
+              <td>{{ emp.department }}</td>
+              <td>
+                  <button (click)="editEmployee(i)">Edit</button>
+                  <button (click)="deleteEmployee(i)">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</body> 
+</html>

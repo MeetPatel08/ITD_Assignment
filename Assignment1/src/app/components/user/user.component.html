@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="user.component.css">
+</head>
+<body>
+    <h2>Welcome to User Page</h2>
+
+<div class="form">
+    <form (submit)="addUser()">
+        <div class="inputContainer">
+            Name: <input type="text" [(ngModel)]="user.name" placeholder="Enter your name" required name="name">
+            Email: <input type="email" [(ngModel)]="user.email" placeholder="Enter your email" required name="email">
+            Role: <input type="text" [(ngModel)]="user.role" placeholder="Enter your role" required name="role">
+            <button type="submit">Add User</button>
+        </div>
+    </form>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usr of usersList; let i = index">
+            <td>{{ usr.name }}</td>
+            <td>{{ usr.email }}</td>
+            <td>{{ usr.role }}</td>
+            <td>
+                <button (click)="editUser(i)">Edit</button>
+                <button (click)="deleteUser(i)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

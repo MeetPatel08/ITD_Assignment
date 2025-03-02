@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.component.css">
+</head>
+<body>
+    <h2>Welcome to Admin Page</h2>
+<div class="form">
+    <form (submit)="addAdmin()">
+        <div class="inputContainer">
+            Name: <input type="text" [(ngModel)]="admin.name" placeholder="Enter admin name" required name="name">
+            Email: <input type="email" [(ngModel)]="admin.email" placeholder="Enter admin email" required name="email">
+            Access Level: <input type="text" [(ngModel)]="admin.accessLevel" placeholder="Enter access level" required name="accessLevel">
+            <button type="submit">Add Admin</button>
+        </div>
+    </form>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Access Level</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let admin of adminsList; let i = index">
+            <td>{{ admin.name }}</td>
+            <td>{{ admin.email }}</td>
+            <td>{{ admin.accessLevel }}</td>
+            <td>
+                <button (click)="editAdmin(i)">Edit</button>
+                <button (click)="deleteAdmin(i)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

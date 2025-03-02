@@ -4,24 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="stylesheet" href="/Assignment1/src/app/auth/home/home.component.css">
 </head>
 <body>
     <hr>
   <div class="bodyContainer">
     
     <div class="header">
-      <header><h1>Welcome  Home</h1></header>
+      <header><h1>Welcome Home</h1></header>
     </div>
-    <div class="imgContainer">
-        <img src="/Angular/src/app/image/car1.jpg" alt="Image 1">
-        <img src="/Angular/src/app/image/car2.jpg" alt="Image 2">
-        <img src="/Angular/src/app/image/car3.jpg" alt="Image 3">
-        <img src="/Angular/src/app/image/car4.jpg" alt="Image 4">
-        <img src="/Angular/src/app/image/car5.jpg" alt="Image 5">
-        <img src="/Angular/src/app/image/car6.jpg" alt="Image 6">
-        <img  id="last" src="/Angular/src/app/image/car7.jpg" alt="Image 7">
+    <div class="bodyContainer">
+
+      <label>Employee</label>
+      <div class="employee">
+        <app-employee></app-employee>
     </div>
 
+    <label>Admin</label>
+    <div class="admin">
+        <app-admin></app-admin>
+    </div>
+
+    <label>User</label>
+    <div class="user">
+        <app-user></app-user>
+    </div>
+    </div>
   </div>
 </body>
 </html>
